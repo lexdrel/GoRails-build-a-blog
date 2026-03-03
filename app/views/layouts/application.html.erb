@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Go Rails Build A Blog" %></title>
+    <title><%= content_for(:title) || "Go Rails Blog" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Go Rails Build A Blog">
+    <meta name="application-name" content="Go Rails Blog">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -25,6 +25,16 @@
 
   <body>
     <main class="container mx-auto mt-28 px-5 flex flex-col">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% if user_signed_in? %>
+        <p>Hello: <%= current_user.email %> </p>
+        <%= link_to "Profile", edit_user_registration_path %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
       <%= yield %>
     </main>
   </body>

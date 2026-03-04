@@ -55,15 +55,15 @@
   /* Basic Button Structure */
   .btn {
     // @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
-    @apply px-4 py-2 rounded
+    @apply px-4 py-2 rounded my-1 min-w-40;
   }
 
   /* Primary Button Variant */
   .btn-primary {
-    @apply bg-gray-100 hover:bg-gray-200 focus:ring-primary-500;
+    @apply bg-gray-200 hover:bg-gray-300 focus:ring-primary-500;
   }
 
-  .btn-decondary {
+  .btn-secondary {
     @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
   }
 

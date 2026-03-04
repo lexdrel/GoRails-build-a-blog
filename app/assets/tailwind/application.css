@@ -1,1 +1,93 @@
 @import "tailwindcss";
+@theme {
+  /* Color Palette based on #ef503b */
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef503b; /* Base Color */
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+  --color-primary-950: #450a0a;
+
+  /* Font Family - Inter is a great modern choice */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Load Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    @apply text-slate-800 antialiased bg-slate-50;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 text-slate-900;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight mb-4 text-slate-800;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold mb-3 text-slate-800;
+  }
+
+  h4 {
+    @apply text-lg font-semibold mb-2 text-slate-800;
+  }
+
+  p {
+    @apply text-base leading-7 text-slate-600 mb-5;
+  }
+
+  a {
+    @apply text-primary-500 hover:text-primary-600 transition-colors font-medium;
+  }
+}
+
+@layer components {
+  /* Basic Button Structure */
+  .btn {
+    // @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply px-4 py-2 rounded
+  }
+
+  /* Primary Button Variant */
+  .btn-primary {
+    @apply bg-gray-100 hover:bg-gray-200 focus:ring-primary-500;
+  }
+
+  .btn-decondary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  /* Text Boxes (Inputs, Textarea) */
+  .form-input, .form-textarea {
+    @apply w-full px-4 py-2 rounded border border-gray-300 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors shadow-sm;
+  }
+
+  /* Option Buttons (Checkboxes, Radios) */
+  .form-checkbox {
+    @apply h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500 transition duration-150 ease-in-out cursor-pointer;
+  }
+
+  .form-radio {
+    @apply h-5 w-5 rounded-full border-gray-300 text-primary-600 focus:ring-primary-500 transition duration-150 ease-in-out cursor-pointer;
+  }
+
+  /* Select Buttons (Dropdowns) */
+  .form-select {
+    @apply w-full px-4 py-2 rounded border border-gray-300 bg-white text-slate-800 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors shadow-sm appearance-none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+}

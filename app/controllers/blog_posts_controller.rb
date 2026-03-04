@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :find_blog_post, only: [ :show, :edit, :update, :destroy ] # except: [ :index, :new, :create ]
+  before_action :authenticate_user!, except: [ :index, :show ]
   def index
     @blog_posts = BlogPost.all
   end

@@ -91,9 +91,10 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: go_rails_build_a_blog_production
-    username: go_rails_build_a_blog
-    password: <%= ENV["GO_RAILS_BUILD_A_BLOG_DATABASE_PASSWORD"] %>
+    host: aws-1-us-east-1.pooler.supabase.com
+    database: postgres
+    username: postgres.njzvbzeoxxmkzlgyudob
+    password: <%= ENV["PROD_DB_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: go_rails_build_a_blog_production_cache

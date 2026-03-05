@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at, class: "form-textarea" %>
+  </div>
+
+  <div>
     <%= form.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

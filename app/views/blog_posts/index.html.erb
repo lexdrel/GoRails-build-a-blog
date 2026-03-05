@@ -3,10 +3,10 @@
   <p>No blog posts available.</p>
 <% else %>
   <% @blog_posts.each do |blog_post| %>
-    <%= link_to blog_post, class: "relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96" do %>
+    <%= link_to blog_post, class: "relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-full" do %>
       <div class="p-4">
         <h2 class="text-xl font-semibold"><%= blog_post.title %></h2>
-        <p><%= blog_post.body %></p>
+        <p><%= blog_post.content %></p>
       </div>
     <% end %>
   <% end %>
